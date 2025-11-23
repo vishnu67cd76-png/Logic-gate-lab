@@ -114,3 +114,43 @@ svg path { stroke:white; stroke-width:3; fill:none; }
 		gap:15px;
 	}
 }
+/* MOBILE FIXES FOR GATE LIST */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px 15px;
+    }
+
+    .sidebar button {
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .gate-title {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+}
+
+/* FIX FOOTER BUTTONS */
+.footer-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-controls .theme-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+}
+
+@media (max-width: 768px) {
+    .footer-controls {
+        padding: 0 10px;
+    }
+}
