@@ -154,3 +154,17 @@ svg path { stroke:white; stroke-width:3; fill:none; }
         padding: 0 10px;
     }
 }
+.try-btn {
+  background: var(--neon-blue);
+  border: none;
+  padding: 4px 10px;
+  color: black;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.try-btn:hover {
+  filter: brightness(1.3);
+}
