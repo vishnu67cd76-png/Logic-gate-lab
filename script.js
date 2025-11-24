@@ -81,12 +81,15 @@ function renderTable(rows, inputCount) {
   const body = rows.map((r, rowIndex) => {
     const cells = r.map(c => `<td>${c}</td>`).join('');
 
+    // Hide Try button only for the first row (index 0)
+    const btn = rowIndex === 0 
+      ? '' 
+      : `<button class="try-btn" onclick="applyTruthRow(${rowIndex})">Try</button>`;
+
     return `
       <tr>
         ${cells}
-        <td>
-          <button class="try-btn" onclick="applyTruthRow(${rowIndex})">Try</button>
-        </td>
+        <td>${btn}</td>
       </tr>`;
   }).join('');
 
