@@ -19,20 +19,21 @@
   <!-- Sidebar -->
   <nav class="sidebar">
     <div class="brand">LOGIC<span class="neon-pink">GateLab</span></div>
-    <button class="nav-btn active" onclick="loadGate('AND')">AND Gate</button>
-    <button class="nav-btn" onclick="loadGate('OR')">OR Gate</button>
-    <button class="nav-btn" onclick="loadGate('NOT')">NOT Gate</button>
-    <button class="nav-btn" onclick="loadGate('NAND')">NAND Gate (Universal gate)</button>
-    <button class="nav-btn" onclick="loadGate('NOR')">NOR Gate (universal gate)</button>
-    <button class="nav-btn" onclick="loadGate('XOR')">XOR Gate (exclusive or)</button>
-    <button class="nav-btn" onclick="loadGate('XNOR')">XNOR Gate (exclusive not)</button>
+
+    <button class="nav-btn active" data-gate="AND" onclick="loadGate('AND')">AND Gate</button>
+    <button class="nav-btn" data-gate="OR" onclick="loadGate('OR')">OR Gate</button>
+    <button class="nav-btn" data-gate="NOT" onclick="loadGate('NOT')">NOT Gate</button>
+    <button class="nav-btn" data-gate="NAND" onclick="loadGate('NAND')">NAND Gate (Universal gate)</button>
+    <button class="nav-btn" data-gate="NOR" onclick="loadGate('NOR')">NOR Gate (universal gate)</button>
+    <button class="nav-btn" data-gate="XOR" onclick="loadGate('XOR')">XOR Gate (exclusive or)</button>
+    <button class="nav-btn" data-gate="XNOR" onclick="loadGate('XNOR')">XNOR Gate (exclusive not)</button>
   </nav>
 
   <!-- Main Content -->
   <main class="main-content">
-    <!-- Simulator Card -->
     <div class="simulator-card">
       <h2 class="gate-title" id="current-gate-title">AND Gate</h2>
+
       <div class="circuit-board">
         <div class="switch-group" id="input-container"></div>
         <div class="gate-visual" id="gate-svg-container"></div>
@@ -49,12 +50,14 @@
         <button class="tab-btn active" onclick="switchTab('def')">Definition</button>
         <button class="tab-btn" onclick="switchTab('table')">Truth Table</button>
       </div>
+
       <div id="tab-def" class="tab-content active">
         <h3 class="neon-blue">Logic Definition</h3>
         <p id="gate-description">The AND gate is a basic digital logic gate.</p>
         <h4 class="neon-pink">Boolean Expression</h4>
         <div id="formula" class="formula">Y = A . B</div>
       </div>
+
       <div id="tab-table" class="tab-content">
         <table class="truth-table" id="truth-table-el"></table>
       </div>
@@ -67,12 +70,10 @@
   </main>
 </div>
 
-<!-- LOCAL jQuery, Popper, Bootstrap JS -->
 <script src="jquery.min.js"></script>
 <script src="popper.min.js"></script>
 <script src="bootstrap.min.js"></script>
 
-<!-- Custom JS -->
 <script src="script.js"></script>
 </body>
 </html>
