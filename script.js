@@ -16,6 +16,7 @@ window.onload = ()=> loadGate('AND');
 function loadGate(name){
   currentGate=name;
   const data=gateData[name];
+
   document.getElementById('current-gate-title').innerText=name+" Gate";
   document.getElementById('gate-description').innerText=data.desc;
   document.getElementById('formula').innerText=data.formula;
@@ -28,7 +29,7 @@ function loadGate(name){
 
   document.querySelectorAll('.nav-btn').forEach(btn=>{
     btn.classList.remove('active');
-    if(btn.innerText.includes(name)) btn.classList.add('active');
+    if(btn.dataset.gate === name) btn.classList.add('active');
   });
 }
 
