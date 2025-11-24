@@ -69,13 +69,48 @@ function resetInputs(){
   calculateLogic();
 }
 
-function renderTable(rows,inputCount){
-  const table=document.getElementById('truth-table-el');
-  let header='<tr>';
-  for(let i=0;i<inputCount;i++) header+=`<th>${String.fromCharCode(65+i)}</th>`;
-  header+='<th>Y</th></tr>';
-  const body=rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('');
-  table.innerHTML=header+body;
+function renderTable(rows, inputCount) {
+  const table = document.getElementById('truth-table-el');
+
+  let header = '<tr>';
+  for (let i = 0; i < inputCount; i++) {
+    header += `<th>${String.fromCharCode(65 + i)}</th>`;
+  }
+  header += '<th>Y</th><th>Action</th></tr>';
+
+  const body = rows.map((r, rowIndex) => {
+    const cells = r.map(c => `<td>${c}</td>`).join('');
+
+    return `
+      <tr>
+        ${cells}
+        <td>
+          <button class="try-btn" onclick="applyTruthRow(${rowIndex})">Try</button>
+        </td>
+      </tr>`;
+  }).join('');
+
+  table.innerHTML = header + body;
+}
+
+function applyTruthRow(index) {
+  const rows = gateData[currentGate].table;
+  const selected = rows[index];
+
+  // Update input states
+  for (let i = 0; i < inputStates.length; i++) {
+    inputStates[i] = selected[i];
+
+    const switchEl = document.querySelectorAll('.toggle-switch')[i];
+    const valEl = document.getElementById(`val-${i}`);
+
+    if (selected[i] === 1) switchEl.classList.add('active');
+    else switchEl.classList.remove('active');
+
+    valEl.innerText = selected[i];
+  }
+
+  calculateLogic();
 }
 
 function switchTab(tab){
