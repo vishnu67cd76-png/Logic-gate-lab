@@ -168,3 +168,47 @@ svg path { stroke:white; stroke-width:3; fill:none; }
 .try-btn:hover {
   filter: brightness(1.3);
 }
+
+/* GRID FOR LOGIC GATE OPTIONS */
+.gate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Perfect Neon Square Boxes */
+.gate-box {
+  aspect-ratio: 1 / 1;        /* Makes perfect squares */
+  background: transparent;
+  border: 2px solid var(--neon-blue);
+  border-radius: 12px;
+  color: #ccc;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s;
+  box-shadow: 0 0 12px rgba(0,243,255,0.2);
+}
+
+/* Hover effect */
+.gate-box:hover {
+  color: white;
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 18px var(--neon-pink);
+  transform: scale(1.05);
+}
+
+/* Active gate state */
+.gate-box.active {
+  background: var(--neon-blue);
+  color: black;
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 25px var(--neon-blue);
+  transform: scale(1.07);
+}
