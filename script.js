@@ -27,10 +27,10 @@ function loadGate(name){
   calculateLogic();
   renderTable(data.table,data.inputs);
 
-  document.querySelectorAll('.nav-btn').forEach(btn=>{
+  document.querySelectorAll('.gate-box').forEach(btn=>{
     btn.classList.remove('active');
     if(btn.dataset.gate === name) btn.classList.add('active');
-  });
+});
 }
 
 function renderInputs(count){
