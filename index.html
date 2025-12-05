@@ -17,17 +17,21 @@
 
 <div class="container-fluid p-0 app-container">
   <!-- Sidebar -->
-  <nav class="sidebar">
-    <div class="brand">LOGIC<span class="neon-pink">GateLab</span></div>
+<nav class="sidebar">
+  <div class="brand">LOGIC<span class="neon-pink">GateLab</span></div>
 
-    <button class="nav-btn active" data-gate="AND" onclick="loadGate('AND')">AND Gate</button>
-    <button class="nav-btn" data-gate="OR" onclick="loadGate('OR')">OR Gate</button>
-    <button class="nav-btn" data-gate="NOT" onclick="loadGate('NOT')">NOT Gate</button>
-    <button class="nav-btn" data-gate="NAND" onclick="loadGate('NAND')">NAND Gate (Universal gate)</button>
-    <button class="nav-btn" data-gate="NOR" onclick="loadGate('NOR')">NOR Gate (universal gate)</button>
-    <button class="nav-btn" data-gate="XOR" onclick="loadGate('XOR')">XOR Gate (exclusive or)</button>
-    <button class="nav-btn" data-gate="XNOR" onclick="loadGate('XNOR')">XNOR Gate (exclusive not)</button>
-  </nav>
+  <div class="gate-grid">
+    <button class="gate-box" data-gate="AND" onclick="loadGate('AND')">AND Gate</button>
+    <button class="gate-box" data-gate="OR" onclick="loadGate('OR')">OR Gate</button>
+    <button class="gate-box" data-gate="NOT" onclick="loadGate('NOT')">NOT Gate</button>
+
+    <button class="gate-box" data-gate="NAND" onclick="loadGate('NAND')">NAND Gate</button>
+    <button class="gate-box" data-gate="NOR" onclick="loadGate('NOR')">NOR Gate</button>
+    <button class="gate-box" data-gate="XOR" onclick="loadGate('XOR')">XOR Gate</button>
+
+    <button class="gate-box" data-gate="XNOR" onclick="loadGate('XNOR')">XNOR Gate</button>
+  </div>
+</nav>
 
   <!-- Main Content -->
   <main class="main-content">
